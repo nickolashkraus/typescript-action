@@ -20,7 +20,7 @@ jobs:
           npm install
       - name: "Run all package scripts"
         run: |
-          # See package.json for commands.
+          # See package.json for `all` command.
           npm run all
   # Ensure the custom action works on a clean runner without building.
   test-usage:
