@@ -1,24 +1,32 @@
-name: 'build-test'
-on: # rebuild any PRs and main branch changes
-  pull_request:
+name: Test
+
+on:
   push:
-    branches:
-      - main
-      - 'releases/*'
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
-  build: # make sure build/ci work properly
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: |
+      # NOTE: You should use the checkout action any time your workflow will
+      # run against the repository's code.
+      # See: https://github.com/marketplace/actions/checkout
+      - uses: actions/checkout@v3
+      # NOTE: Github runners have native support for Node.js 12 and Node.js 16.
+      - name: "Install dependencies"
+        run: |
           npm install
-      - run: |
+      - name: "Run all package scripts"
+        run: |
+          # See package.json for commands.
           npm run all
-  test: # make sure the action works on a clean machine without building
+  # Ensure the custom action works on a clean runner without building.
+  test-usage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: ./
+      - uses: actions/checkout@v3
+      uses: ./ # Uses an action in the root directory.
         with:
-          milliseconds: 1000
+          input: "This is some input."
