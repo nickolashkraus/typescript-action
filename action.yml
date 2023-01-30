@@ -1,11 +1,42 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+# Action metadata file
+#
+# All actions require a metadata file. The metadata filename must be either
+# action.yml or action.yaml. The data in the metadata file defines the inputs,
+# outputs, and runs configuration for your action.
+#
+# See: https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions
+name: "TypeScript Action"
+author: "Nickolas Kraus"
+description: |
+  "An example TypeScript Action with compilation, tests, linting, workflow, publishing, and versioning."
+# 'inputs' allow you to specify data that the action expects to use during
+# runtime. GitHub stores input parameters as environment variables with the
+# name `INPUT_<VARIABLE_NAME>`.
+#
+# Workflows that use the action can use the `with` keyword to set an input
+# value.
+#
+# Example:
+#
+#   - uses: nickolashkraus/typescript-action@v1
+#     with:
+#       input: "Hello, World!"
 inputs:
-  milliseconds: # change this
+  input:
+    description: "String to echo to the console."
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    default: "default"
+# 'outputs' allow you to declare data that an action sets. Actions that run
+# later in a workflow can use the output data set in previously run actions.
+#
+# Example:
+#
+#   - runs: echo ${{steps.<id>.outputs.<id>}}
+outputs:
+  output:
+    description: "String to output to the console."
+# `runs` configures the path to the action's code and the runtime used to
+# execute the code.
 runs:
-  using: 'node16'
-  main: 'dist/index.js'
+  using: "node16"
+  main: "dist/index.js"
