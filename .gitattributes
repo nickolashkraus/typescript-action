@@ -1,1 +1,2 @@
-dist/** -diff linguist-generated=true 
+# See: https://git-scm.com/docs/gitattributes
+dist/** -diff linguist-generated=true
