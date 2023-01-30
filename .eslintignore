@@ -1,3 +1,4 @@
+# See: https://eslint.org/docs/latest/use/configure/ignore
 dist/
 lib/
 node_modules/
