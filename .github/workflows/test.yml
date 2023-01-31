@@ -17,7 +17,7 @@ jobs:
       # NOTE: Github runners have native support for Node.js 12 and Node.js 16.
       - name: "Install dependencies"
         run: |
-          npm install
+          npm ci
       - name: "Run all package scripts"
         run: |
           # See package.json for `all` command.
