@@ -151,7 +151,7 @@ $ npm install
 
 Compile the TypeScript to JavaScript:
 
-```
+```bash
 $ npm run build
 ```
 
@@ -159,12 +159,12 @@ $ npm run build
 
 Run tests:
 
-```
+```bash
 $ npm run test
 ```
 
-Compile the JavaScript to a single file (`index.js`):
+Compile the JavaScript into a single file with its dependencies (`index.js`):
 
-```
+```bash
 $ npm run package
 ```
