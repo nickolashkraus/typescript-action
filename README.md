@@ -1,7 +1,5 @@
 # TypeScript Action
 
-[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/nickolashkraus/typescript-action/blob/master/LICENSE)
-
 An example TypeScript Action with compilation, tests, linting, workflow, publishing, and versioning.
 
 ## Overview
